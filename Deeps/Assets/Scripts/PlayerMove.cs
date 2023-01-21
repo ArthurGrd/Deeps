@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -9,16 +8,15 @@ public class PlayerMove : MonoBehaviour
     public Transform groundCheck;
     public float radiusCollisionGround;
     public LayerMask layerDetect;
-    
     public Animator animator;
     public SpriteRenderer sr;
  
     private bool isJumping;
     private bool isGrounded;
     private float horizontalMovement;
-
     private Vector3 _velocity = Vector3.zero;
-
+    
+    
     private void Update()
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -36,7 +34,7 @@ public class PlayerMove : MonoBehaviour
         horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
         MovePlayer(horizontalMovement);
     }
-
+    
     void MovePlayer(float _horizontalMovement)
     {
         var velocity1 = rb.velocity;

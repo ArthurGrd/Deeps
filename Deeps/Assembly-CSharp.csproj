@@ -41,8 +41,17 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
-     <Compile Include="Assets\Scripts\Camerafollow.cs" />
+     <Compile Include="Assets\Scripts\PlayerGameplay.cs" />
+     <Compile Include="Assets\Scripts\HealthBar.cs" />
+     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\ProgressBar.cs" />
+     <Compile Include="Assets\Scripts\PlayerProgress.cs" />
+     <Compile Include="Assets\Scripts\ScenesManager.cs" />
+     <Compile Include="Assets\Scripts\PermObjects.cs" />
+     <Compile Include="Assets\Scripts\SpawnPoint.cs" />
+     <Compile Include="Assets\Scripts\Borders.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Imports\BlueWizard Animations\BlueWizard\2BlueWizardIdle" />
      <Folder Include="Assets\Imports\BlueWizard Animations\BlueWizard\2BlueWizardJump\Dash2" />
@@ -52,9 +61,10 @@
      <Folder Include="Assets\Animations" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\Imports\BlueWizard Animations\BlueWizard\2BlueWizardWalk" />
-     <Folder Include="Assets\PhysicsMaterial" />
+     <Folder Include="Assets\PhysicMaterials" />
      <Folder Include="Assets\Imports\BlueWizard Animations\BlueWizard\2BlueWizardJump" />
      <Folder Include="Assets\Imports\BlueWizard Animations\BlueWizard\2BlueWizardJump\DashEffect" />
+     <Folder Include="Assets\Prefabs" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Imports\BlueWizard Animations\BlueWizard\2BlueWizardIdle\Materials" />
      <Folder Include="Assets\Imports\BlueWizard Animations" />
