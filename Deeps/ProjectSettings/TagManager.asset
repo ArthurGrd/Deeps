@@ -7,6 +7,9 @@ TagManager:
   - BorderL
   - BorderR
   - SwitchScene
+  - Boss
+  - MapBeforeBoss
+  - MapAfterBoss
   layers:
   - Default
   - TransparentFX
