@@ -1,51 +1,140 @@
+using System;
+using TMPro;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float moveSpeed;
-    public float jumpForce;
-    public Rigidbody2D rb;
-    public Transform groundCheck;
-    public float radiusCollisionGround;
-    public LayerMask layerDetect;
-    public Animator animator;
-    public SpriteRenderer sr;
- 
-    private bool isJumping;
-    private bool isGrounded;
-    private float horizontalMovement;
-    private Vector3 _velocity = Vector3.zero;
+    [Header("Componants")]
+    [SerializeField]private Rigidbody2D rb;
+
+    [SerializeField] private SpriteRenderer sr;
+
+    [SerializeField] private Transform checkGroud;
+    [SerializeField] public float radius;
     
+    [Header("Movement Variables")]
+    [SerializeField]private float _movementAcceleration = 50f;
+    [SerializeField]private float _maxMoveSpeed= 12f;
+    [SerializeField]private float _linearDrag = 10f;
     
-    private void Update()
+    [Header("Jump Variables")] 
+    [SerializeField] private float _jumpForce = 12f;
+    [SerializeField] private float _airLinearDrag = 2.5f;
+    [SerializeField] private float _fallmult = 8f;
+    [SerializeField] private float _lowJumpFallMultiplier = 5f;
+
+    [Header("Layer Mask")] 
+    [SerializeField] private LayerMask _groundLayer;
+
+    [Header("Ground Collision Variable")] 
+    [SerializeField] private float _groundRaycastLength;
+
+    private bool _onGround;
+    
+    private float _horizontalDirection;
+    private bool _changeDirection => (rb.velocity.x > 0f && _horizontalDirection < 0f) || (rb.velocity.x < 0f && _horizontalDirection > 0f);
+
+
+    private bool canJump => Input.GetButtonDown("Jump") && _onGround;
+
+
+
+    private void Start()
     {
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            isJumping = true;
-        } 
-        Flip(rb.velocity.x);
-        float chatracterVelocity = Mathf.Abs(rb.velocity.x);
-        animator.SetFloat("Speed",chatracterVelocity);
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
+
+    private void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, radiusCollisionGround,layerDetect);
-        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
-        MovePlayer(horizontalMovement);
-    }
-    
-    void MovePlayer(float _horizontalMovement)
-    {
-        var velocity1 = rb.velocity;
-        Vector3 targetVelocity = new Vector2(_horizontalMovement, velocity1.y);
-        rb.velocity = Vector3.SmoothDamp(velocity1, targetVelocity,ref _velocity,.05f);
-        if (isJumping)
+        _horizontalDirection = GetInput().x;
+        CheckCollisions();
+        if (Input.GetButtonDown("Jump") && _onGround) 
+            Jump();
+        if (_onGround)
         {
-            rb.AddForce(new Vector2(0f,jumpForce));
-            isJumping = false;
+            ApplyLinearDrag();
+        }
+        else
+        {
+            ApplyAirLinearDrag();
+            FallMultplier();
         }
     }
+
+    private void FixedUpdate()
+    {
+        MoveCharacter();
+        ApplyLinearDrag();
+        Flip(rb.velocity.x);
+    }
+
+    private void ApplyAirLinearDrag()
+    {
+        rb.drag = _airLinearDrag;
+    }
+
+    private void FallMultplier()
+    {
+        if (rb.velocity.y < 0)
+        {
+            rb.gravityScale = _fallmult;
+        }
+        else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
+        {
+            rb.gravityScale = _lowJumpFallMultiplier;
+        }
+        else
+        {
+            rb.gravityScale = 1f;
+        }
+    }
+
+
+    private static Vector2 GetInput()
+    {
+        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+    }
+
+    private void MoveCharacter()
+    {
+        rb.AddForce(new Vector2(_horizontalDirection,0f) * _movementAcceleration);
+        if (Mathf.Abs(rb.velocity.x) > _maxMoveSpeed)
+        {
+            rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * _maxMoveSpeed, rb.velocity.y);
+        }
+    }
+
+    private void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, 0f);
+        rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+    }
+
+    private void ApplyLinearDrag()
+    {
+        if (Mathf.Abs(_horizontalDirection) < 0.4f || _changeDirection)
+        {
+            rb.drag = _linearDrag;
+        }
+        else
+        {
+            rb.drag = 0f;
+        }
+    }
+
+    private void CheckCollisions()
+    {
+        _onGround = Physics2D.OverlapCircle(checkGroud.position, radius, _groundLayer);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(checkGroud.position,radius);
+    }
+
 
     void Flip(float velocity)
     {

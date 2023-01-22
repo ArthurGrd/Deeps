@@ -1,0 +1,279 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.16f1 (4016570cf34f) revision 4200023'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22000) 64bit Professional' Language: 'fr' Physical Memory: 32627 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Users/Brice/Desktop/dd/Deeps/Deeps
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+52873
+Successfully changed project path to: C:/Users/Brice/Desktop/dd/Deeps/Deeps
+C:/Users/Brice/Desktop/dd/Deeps/Deeps
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [17288] Host "[IP] 192.168.0.13 [Port] 0 [Flags] 2 [Guid] 1460490433 [EditorId] 1460490433 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-RKU278G) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [17288] Host "[IP] 192.168.0.13 [Port] 0 [Flags] 2 [Guid] 1460490433 [EditorId] 1460490433 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-RKU278G) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 63.14 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.16f1 (4016570cf34f)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Brice/Desktop/dd/Deeps/Deeps/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3080 (ID=0x2216)
+    Vendor:   NVIDIA
+    VRAM:     10078 MB
+    Driver:   31.0.15.1694
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56376
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003062 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 54.25 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.427 seconds
+Domain Reload Profiling:
+	ReloadAssembly (427ms)
+		BeginReloadAssembly (43ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (0ms)
+		EndReloadAssembly (320ms)
+			LoadAssemblies (42ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (92ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (16ms)
+			SetupLoadedEditorAssemblies (172ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (54ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (84ms)
+				ProcessInitializeOnLoadMethodAttributes (27ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.003794 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Brice\Desktop\dd\Deeps\Deeps\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Brice\Desktop\dd\Deeps\Deeps\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 102.26 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.743 seconds
+Domain Reload Profiling:
+	ReloadAssembly (743ms)
+		BeginReloadAssembly (65ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (12ms)
+		EndReloadAssembly (610ms)
+			LoadAssemblies (45ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (141ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (42ms)
+			SetupLoadedEditorAssemblies (350ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (102ms)
+				BeforeProcessingInitializeOnLoad (64ms)
+				ProcessInitializeOnLoadAttributes (148ms)
+				ProcessInitializeOnLoadMethodAttributes (27ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.52 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4057 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 44 unused Assets / (229.2 KB). Loaded Objects now: 4508.
+Memory consumption went from 151.1 MB to 150.8 MB.
+Total: 2.248900 ms (FindLiveObjects: 0.180700 ms CreateObjectMapping: 0.089500 ms MarkObjects: 1.866900 ms  DeleteObjects: 0.111200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: e54d7ab0439102e2317fc1e4b246158d -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 342135.723060 seconds.
+  path: Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/Dash2
+  artifactKey: Guid(9047b755b9835b84ab3e2ce372fe087c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/Dash2 using Guid(9047b755b9835b84ab3e2ce372fe087c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52e977dad75211647055e7d028ccc9fc') in 0.008533 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.058064 seconds.
+  path: Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/Dash2/DashBlue_00000.png
+  artifactKey: Guid(6ef8bfbbfc0688a4aa2996dacc18dcf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/Dash2/DashBlue_00000.png using Guid(6ef8bfbbfc0688a4aa2996dacc18dcf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52ff60a46d06046d050a3c36b6f3074a') in 0.089879 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/Dash2/DashBlue_00011.png
+  artifactKey: Guid(b01ea8234d76ccc4e8e1f8016afbb25b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/Dash2/DashBlue_00011.png using Guid(b01ea8234d76ccc4e8e1f8016afbb25b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd50d69eb45bb2c9cf6adbababee2bc5a') in 0.018675 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.716505 seconds.
+  path: Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/DashEffect/BlueWizardDash_00001.png
+  artifactKey: Guid(0014df1d2ded83d4b98f63a51dcd4f49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/DashEffect/BlueWizardDash_00001.png using Guid(0014df1d2ded83d4b98f63a51dcd4f49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43d69f0a926a23ef32f0ba12c9512ff0') in 0.018167 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/DashEffect/BlueWizardDash_00015.png
+  artifactKey: Guid(26e70a5e75a03dd48a672956882ed4a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/DashEffect/BlueWizardDash_00015.png using Guid(26e70a5e75a03dd48a672956882ed4a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61a580c83dad13f73147fb5758575fb5') in 0.018191 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/DashEffect/BlueWizardDash_00011.png
+  artifactKey: Guid(b7ef93631a18ba548a2e7a1416877d9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/DashEffect/BlueWizardDash_00011.png using Guid(b7ef93631a18ba548a2e7a1416877d9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57cc8ccf147338173166226fb8a1241b') in 0.016187 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/DashEffect/BlueWizardDash_00014.png
+  artifactKey: Guid(8e209b77129bd3e4ca74757fcfdcb566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/DashEffect/BlueWizardDash_00014.png using Guid(8e209b77129bd3e4ca74757fcfdcb566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b5e896ebf017683e5cde95c15411632') in 0.018669 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.235274 seconds.
+  path: Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/Dash3/Dash3_00001.png
+  artifactKey: Guid(b24597a8f265b9c4cb341362d6bec4de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/Dash3/Dash3_00001.png using Guid(b24597a8f265b9c4cb341362d6bec4de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a274320d839323ca73fcccfec08ed812') in 0.025734 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/Dash3/Dash3_00010.png
+  artifactKey: Guid(2a9c7932f369a474eb564c3fb121c116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/Dash3/Dash3_00010.png using Guid(2a9c7932f369a474eb564c3fb121c116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8313a807bca076c2094b8199b9406f0') in 0.017427 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/Dash3/Dash3_00011.png
+  artifactKey: Guid(226fc6f47fc401744b72ac2c5b89e186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardJump/Dash3/Dash3_00011.png using Guid(226fc6f47fc401744b72ac2c5b89e186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c46e5b05a817e17879937a35a8110f42') in 0.017273 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.696088 seconds.
+  path: Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00001.png
+  artifactKey: Guid(04a079e3400158549903e6844eb1cc0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00001.png using Guid(04a079e3400158549903e6844eb1cc0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36143c761715867def34e866444d1c4e') in 0.016386 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00015.png
+  artifactKey: Guid(63dab487c5b150046b663245d50586b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00015.png using Guid(63dab487c5b150046b663245d50586b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c087dd61a29ea0b8167de04fd2460110') in 0.018505 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00009.png
+  artifactKey: Guid(321cc04041a25574288681aa12ac0c8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00009.png using Guid(321cc04041a25574288681aa12ac0c8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19f9b80073edb343364473b48694a358') in 0.020147 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00007.png
+  artifactKey: Guid(f81513ca0dcac89469a22a10c9f95676) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardWalk/Chara_BlueWalk00007.png using Guid(f81513ca0dcac89469a22a10c9f95676) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f079ef4317cf0c763583a0cdce15362') in 0.025462 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.239676 seconds.
+  path: Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00001.png
+  artifactKey: Guid(08e10a06917406b4793207563eef1dc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00001.png using Guid(08e10a06917406b4793207563eef1dc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df89e500e2fcc584f02903b58789688f') in 0.016962 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00015.png
+  artifactKey: Guid(c15b9e0f5f4a78f449290278b059038a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00015.png using Guid(c15b9e0f5f4a78f449290278b059038a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36024810762acb9d4620d9b68ae7dbbd') in 0.018988 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00014.png
+  artifactKey: Guid(dcb32f66848ed7745a07072bb7cdb6a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00014.png using Guid(dcb32f66848ed7745a07072bb7cdb6a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bb77fe6d9994f54a131f56052922e5c') in 0.019984 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00011.png
+  artifactKey: Guid(014cef1dd3a4d17449b10bc099957ca9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/BlueWizard Animations/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00011.png using Guid(014cef1dd3a4d17449b10bc099957ca9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '945e0cc8c5249da81742ef473cc6e045') in 0.018811 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
