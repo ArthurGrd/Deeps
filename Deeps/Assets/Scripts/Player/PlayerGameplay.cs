@@ -59,6 +59,12 @@ public class PlayerGameplay : MonoBehaviour
          */
         if (playerHealth.GetCurrentHealth() <= 0)
         {
+            
+            
+            
+            
+            
+            
             transform.localPosition = _actualSpawn.transform.position;
             playerHealth.SetCurrentHealth(playerHealth.maxHealth);
         }
