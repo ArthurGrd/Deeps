@@ -5,32 +5,32 @@ public class HealthBar : MonoBehaviour
 {
     public Image refHearth;
 
-    private Image[] hearths;
-    private PlayerHealth playerHealth;
+    private Image[] _hearths;
+    private PlayerHealth _playerHealth;
 
 
     private void Start()
     {
-        playerHealth = GameObject.Find("Player").GetComponent(typeof(PlayerHealth)) as PlayerHealth;
-        hearths = new Image[playerHealth.maxHealth];
-        for (int i = 0; i < hearths.Length; i++)
+        _playerHealth = GameObject.Find("Player").GetComponent(typeof(PlayerHealth)) as PlayerHealth;
+        _hearths = new Image[_playerHealth.maxHealth];
+        for (int i = 0; i < _hearths.Length; i++)
         {
-            hearths[i] = Instantiate(refHearth, transform.position, Quaternion.identity);
-            hearths[i].transform.SetParent(transform);
-            hearths[i].transform.localScale = new Vector3(1, 1, 1);
-            hearths[i].transform.localPosition = new Vector3(transform.position.x + (i * 70), transform.position.y,transform.position.z);
-            hearths[i].name = "Hearth N" + i;
+            _hearths[i] = Instantiate(refHearth, transform.position, Quaternion.identity);
+            _hearths[i].transform.SetParent(transform);
+            _hearths[i].transform.localScale = new Vector3(1, 1, 1);
+            _hearths[i].transform.localPosition = new Vector3(transform.position.x + (i * 70), transform.position.y,transform.position.z);
+            _hearths[i].name = "Hearth N" + i;
         }
     }
 
     private void Update()
     {
-        for (int i = 0; i < hearths.Length; i++)
+        for (int i = 0; i < _hearths.Length; i++)
         {
-            if (i < playerHealth.GetCurrentHealth())
-                hearths[i].enabled = true;
+            if (i < _playerHealth.GetCurrentHealth())
+                _hearths[i].enabled = true;
             else
-                hearths[i].enabled = false;
+                _hearths[i].enabled = false;
         }    
     }
 }

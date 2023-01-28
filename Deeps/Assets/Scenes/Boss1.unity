@@ -237,8 +237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704c3b4fc2792e34da220671ef58e4a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
-  barAfter: {fileID: 21300000, guid: 9a3087dd6a35cd943b8dd962874015c4, type: 3}
+  nextProgressBar: {fileID: 21300000, guid: 9a3087dd6a35cd943b8dd962874015c4, type: 3}
+  bossBar: {fileID: 21300000, guid: 86ec6bd470b148f40aa792c56717fb84, type: 3}
 --- !u!1 &638083232
 GameObject:
   m_ObjectHideFlags: 0

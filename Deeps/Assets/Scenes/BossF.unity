@@ -134,28 +134,14 @@ GameObject:
   - component: {fileID: 255558761}
   - component: {fileID: 255558760}
   - component: {fileID: 255558759}
-  - component: {fileID: 255558758}
+  - component: {fileID: 255558762}
   m_Layer: 0
-  m_Name: Goblin
+  m_Name: King
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &255558758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255558757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 704c3b4fc2792e34da220671ef58e4a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 2
-  barAfter: {fileID: 21300000, guid: 29ba92097b9e5ce41a920f5ebcc26fc2, type: 3}
 --- !u!70 &255558759
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -239,6 +225,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &255558762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255558757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7753cd9a87184ab584202db1aa7f49e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextProgressBar: {fileID: 21300000, guid: 29ba92097b9e5ce41a920f5ebcc26fc2, type: 3}
+  bossBar: {fileID: 21300000, guid: 68dd4d2a613cc2242a2a286a83edee05, type: 3}
 --- !u!1 &285849769
 GameObject:
   m_ObjectHideFlags: 0

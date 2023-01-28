@@ -1,6 +1,3 @@
-using System;
-using TMPro;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -45,8 +42,7 @@ public class PlayerMove : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-
-    private void Update()
+    public void UpdateMove()
     {
         _horizontalDirection = GetInput().x;
         CheckCollisions();
@@ -62,6 +58,7 @@ public class PlayerMove : MonoBehaviour
             FallMultplier();
         }
     }
+    
 
     private void FixedUpdate()
     {

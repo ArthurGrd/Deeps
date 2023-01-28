@@ -15,8 +15,8 @@ public class PlayerProgress : MonoBehaviour
     private ProgressZones _currentProgressZone;
     private readonly int[] _barPoints = {0, 5, 27, 51, 74, 100};
     private GameObject[] _borders;
-    private PlayerGameplay playerGameplay;
-    private ProgressBar progressBar;
+    private PlayerGameplay _playerGameplay;
+    private ProgressBar _progressBar;
 
 
     //-------------GETTERS-SETTERS-------------
@@ -32,8 +32,8 @@ public class PlayerProgress : MonoBehaviour
     
     private void Start()
     {
-        progressBar = GameObject.Find("Slider").GetComponent(typeof(ProgressBar)) as ProgressBar;
-        playerGameplay = GameObject.Find("Player").GetComponent(typeof(PlayerGameplay)) as PlayerGameplay;
+        _progressBar = GameObject.Find("SliderProgress").GetComponent(typeof(ProgressBar)) as ProgressBar;
+        _playerGameplay = GameObject.Find("Player").GetComponent(typeof(PlayerGameplay)) as PlayerGameplay;
         _currentProgress = 0;
         _currentProgressZone = ProgressZones.Spawn;
     }

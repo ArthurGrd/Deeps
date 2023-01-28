@@ -1,42 +1,53 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-public class BossGoblin : MonoBehaviour
+public class BossGoblin : MonoBehaviour, IBoss
 {
-    public int damage;
-    public Sprite barAfter;
-    
+    public Sprite nextProgressBar;
+    public Sprite bossBar;
+
+    private int _maxHealth = 10;
+    private int _attackDamage = 1;
+    private BossManager _bossManager;
     private PlayerHealth _playerHealth;
-    private GameObject _mapBeforeBoss;
-    private GameObject _mapAfterBoss;
-    private Image _sliderUI;
-
-
+    private PlayerAttack _playerAttack;
+    private int _health;
+    
     private void Awake()
     {
+        _bossManager = GameObject.Find("GameManager").GetComponent(typeof(BossManager)) as BossManager;
         _playerHealth = GameObject.Find("Player").GetComponent(typeof(PlayerHealth)) as PlayerHealth;
-        _mapBeforeBoss = GameObject.FindWithTag("MapBeforeBoss");
-        _mapAfterBoss = GameObject.FindWithTag("MapAfterBoss");
-        _sliderUI = GameObject.Find("BackgroundSliderUI").GetComponent(typeof(Image)) as Image;
-        
-        _mapBeforeBoss.SetActive(true);
-        _mapAfterBoss.SetActive(false);
+        _playerAttack = GameObject.Find("Player").GetComponent(typeof(PlayerAttack)) as PlayerAttack;
+        _bossManager.InitializeBoss(bossBar);
+        _health = _maxHealth;
     }
 
+    public int GetHealth()
+    {
+        return _health;
+    }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            _playerHealth.TakeDamage(damage);
+            _playerHealth.TakeDamage(_attackDamage);
+            TakeDamage(_playerAttack.attackDamage);
         }
-        BossDeath();
     }
 
-    private void BossDeath()
+    public void TakeDamage(int damage)
     {
-        gameObject.SetActive(false);
-        _mapBeforeBoss.SetActive(false);
-        _mapAfterBoss.SetActive(true);
-        _sliderUI.sprite = barAfter;
+        if (_health>0)
+        {
+            _health -= damage;
+        }
+    }
+    
+    private void Update()
+    {
+        if (_health<=0)
+        {
+            _bossManager.BossDeath(gameObject,nextProgressBar);
+        }
     }
 }

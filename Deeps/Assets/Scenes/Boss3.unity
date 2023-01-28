@@ -24629,28 +24629,14 @@ GameObject:
   - component: {fileID: 718549212}
   - component: {fileID: 718549211}
   - component: {fileID: 718549210}
-  - component: {fileID: 718549209}
+  - component: {fileID: 718549213}
   m_Layer: 0
-  m_Name: Goblin
+  m_Name: Slime
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &718549209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718549208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 704c3b4fc2792e34da220671ef58e4a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 2
-  barAfter: {fileID: 21300000, guid: 22d8cce75b4d6a64f9084bb3d8ebb5bd, type: 3}
 --- !u!70 &718549210
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -24734,6 +24720,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &718549213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718549208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 239d745eaf7549858abe0a39a248e738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextProgressBar: {fileID: 21300000, guid: 22d8cce75b4d6a64f9084bb3d8ebb5bd, type: 3}
+  bossBar: {fileID: 21300000, guid: acc72defdac88b54baa924ba10f412f9, type: 3}
 --- !u!1 &791569681
 GameObject:
   m_ObjectHideFlags: 0

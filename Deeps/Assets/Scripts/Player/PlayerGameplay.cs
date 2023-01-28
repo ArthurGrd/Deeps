@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerGameplay : MonoBehaviour
 {
@@ -16,14 +15,13 @@ public class PlayerGameplay : MonoBehaviour
         Parkour4,
         BossF
     }
-
-    public Sprite originalBar;
-    
     private GameObject _actualSpawn;
     private Scenes _actualScene;
-    private PlayerHealth playerHealth;
-    private PlayerProgress playerProgress;
-    private Image _sliderUI;
+    private PlayerHealth _playerHealth;
+    private PlayerProgress _playerProgress;
+    private PlayerMove _playerMove;
+    private PlayerAttack _playerAttack;
+    private PauseMenu _pauseMenu;
 
 
     //-------------GETTERS-SETTERS-------------
@@ -36,12 +34,13 @@ public class PlayerGameplay : MonoBehaviour
     
     private void Start()
     {
-        playerProgress = GameObject.Find("Player").GetComponent(typeof(PlayerProgress)) as PlayerProgress;
-        playerHealth = GameObject.Find("Player").GetComponent(typeof(PlayerHealth)) as PlayerHealth;
-        _sliderUI = GameObject.Find("BackgroundSliderUI").GetComponent(typeof(Image)) as Image;
+        _playerProgress = GameObject.Find("Player").GetComponent(typeof(PlayerProgress)) as PlayerProgress;
+        _playerHealth = GameObject.Find("Player").GetComponent(typeof(PlayerHealth)) as PlayerHealth;
+        _playerAttack = GameObject.Find("Player").GetComponent(typeof(PlayerAttack)) as PlayerAttack;
+        _playerMove = GameObject.Find("Player").GetComponent(typeof(PlayerMove)) as PlayerMove;
+        _pauseMenu = GameObject.Find("OnScreen").GetComponent(typeof(PauseMenu)) as PauseMenu;
         _actualScene = Scenes.Spawn;
         transform.position = _actualSpawn.transform.position;
-        _sliderUI.sprite = originalBar;
     }
 
     private void Update()
@@ -49,24 +48,29 @@ public class PlayerGameplay : MonoBehaviour
         /*
          * ----Inputs---
          */
-        if (Input.GetKeyDown(KeyCode.F))
+
+        _pauseMenu.UpdatePauseMenu();
+        if (!_pauseMenu.GetIsGamePaused())
         {
-            playerHealth.TakeDamage(1);
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                _playerHealth.TakeDamage(1);
+            }
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                _playerAttack.Attack();
+            }
+            _playerMove.UpdateMove();   
         }
-        
+
+
         /*
          * ----Death---
          */
-        if (playerHealth.GetCurrentHealth() <= 0)
+        if (_playerHealth.GetCurrentHealth() <= 0)
         {
-            
-            
-            
-            
-            
-            
             transform.localPosition = _actualSpawn.transform.position;
-            playerHealth.SetCurrentHealth(playerHealth.maxHealth);
+            _playerHealth.SetCurrentHealth(_playerHealth.maxHealth);
         }
     }
 }
