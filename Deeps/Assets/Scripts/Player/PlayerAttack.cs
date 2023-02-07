@@ -1,10 +1,20 @@
+using System;
 using UnityEngine;
+
+public interface IWeapons
+{
+    public int GetDamage();
+    public string GetName();
+    public int GetAttackSpeed();
+}
+
 
 public class PlayerAttack : MonoBehaviour
 {
-    public int attackDamage = 4;
-    
     private Animator _animator;
+    public static IWeapons _actualweapon { get; set; } = null;
+
+    private int _attackDelay = 0;
 
     private void Start()
     {
@@ -13,6 +23,19 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()
     {
-        _animator.SetTrigger("Attack");
+        if (_attackDelay==0 && _actualweapon!=null)
+        {
+            _animator.SetTrigger("Attack");
+
+            _attackDelay = 120 / _actualweapon.GetAttackSpeed();
+        }
+    }
+
+    private void Update()
+    {
+        if (_attackDelay!=0)
+        {
+            _attackDelay -= 1;
+        }
     }
 }

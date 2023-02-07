@@ -33,7 +33,7 @@ public class Borders : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_playerGameplay.getActualScene().ToString() is "Spawn" or "Parkour1" or "Parkour2" or "Parkour3"
+        if (PlayerGameplay._actualScene.ToString() is "Spawn" or "Parkour1" or "Parkour2" or "Parkour3"
             or "Parkour4")
         {
             _progressBar.progressBarUpdateByZone(_borders[0].transform.position.x,_borders[1].transform.position.x,_playerProgress.GetCurrentProgressZone());

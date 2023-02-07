@@ -31,7 +31,7 @@ public class BossSlime : MonoBehaviour, IBoss
         if (collision.CompareTag("Player"))
         {
             _playerHealth.TakeDamage(_attackDamage);
-            TakeDamage(_playerAttack.attackDamage);
+            TakeDamage(PlayerAttack._actualweapon.GetDamage());
         }
     }
 

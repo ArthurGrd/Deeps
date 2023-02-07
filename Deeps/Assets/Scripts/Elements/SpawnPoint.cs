@@ -6,7 +6,7 @@ public class SpawnPoint : MonoBehaviour
     private void Awake()
     {
         _playerGameplay = GameObject.Find("Player").GetComponent(typeof(PlayerGameplay)) as PlayerGameplay;
-        _playerGameplay.setActualSpawn(gameObject);
+        PlayerGameplay._actualSpawn = gameObject;
         _playerGameplay.transform.position = transform.position;
     }
 }

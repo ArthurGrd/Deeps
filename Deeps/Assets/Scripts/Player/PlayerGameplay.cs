@@ -15,8 +15,9 @@ public class PlayerGameplay : MonoBehaviour
         Parkour4,
         BossF
     }
-    private GameObject _actualSpawn;
-    private Scenes _actualScene;
+    public static GameObject _actualSpawn;
+    public static Scenes _actualScene;
+    
     private PlayerHealth _playerHealth;
     private PlayerProgress _playerProgress;
     private PlayerMove _playerMove;
@@ -24,14 +25,6 @@ public class PlayerGameplay : MonoBehaviour
     private PauseMenu _pauseMenu;
 
 
-    //-------------GETTERS-SETTERS-------------
-    public void setActualScene(Scenes scene) { _actualScene = scene; }
-    public Scenes getActualScene() { return _actualScene; }
-    public void setActualSpawn(GameObject spawn) { _actualSpawn = spawn; }
-    public GameObject getActualSpawn() { return _actualSpawn; }
-    //----------------------------------------
-
-    
     private void Start()
     {
         _playerProgress = GameObject.Find("Player").GetComponent(typeof(PlayerProgress)) as PlayerProgress;
@@ -67,10 +60,10 @@ public class PlayerGameplay : MonoBehaviour
         /*
          * ----Death---
          */
-        if (_playerHealth.GetCurrentHealth() <= 0)
+        if (_playerHealth._currentHealth <= 0)
         {
             transform.localPosition = _actualSpawn.transform.position;
-            _playerHealth.SetCurrentHealth(_playerHealth.maxHealth);
+            _playerHealth._currentHealth = _playerHealth.maxHealth;
         }
     }
 }

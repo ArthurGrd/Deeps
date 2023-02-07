@@ -27,7 +27,7 @@ public class HealthBar : MonoBehaviour
     {
         for (int i = 0; i < _hearths.Length; i++)
         {
-            if (i < _playerHealth.GetCurrentHealth())
+            if (i < _playerHealth._currentHealth)
                 _hearths[i].enabled = true;
             else
                 _hearths[i].enabled = false;

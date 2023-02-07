@@ -9,14 +9,12 @@ public class BossZombie : MonoBehaviour, IBoss
     private int _attackDamage = 5;
     private BossManager _bossManager;
     private PlayerHealth _playerHealth;
-    private PlayerAttack _playerAttack;
     private int _health;
     
     private void Awake()
     {
         _bossManager = GameObject.Find("GameManager").GetComponent(typeof(BossManager)) as BossManager;
         _playerHealth = GameObject.Find("Player").GetComponent(typeof(PlayerHealth)) as PlayerHealth;
-        _playerAttack = GameObject.Find("Player").GetComponent(typeof(PlayerAttack)) as PlayerAttack;
         _bossManager.InitializeBoss(bossBar);
         _health = _maxHealth;
     }
@@ -31,7 +29,7 @@ public class BossZombie : MonoBehaviour, IBoss
         if (collision.CompareTag("Player"))
         {
             _playerHealth.TakeDamage(_attackDamage);
-            TakeDamage(_playerAttack.attackDamage);
+            TakeDamage(PlayerAttack._actualweapon.GetDamage());
         }
     }
 

@@ -5,15 +5,9 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth;
     public float invulnerabilityTime;
     
-    private int _currentHealth;
+    public int _currentHealth { get; set; }
     private int _framesOfInvulnerability;
     private SpriteRenderer _spriteRenderer;
-
-
-    //-------------GETTERS-SETTERS-------------
-    public int GetCurrentHealth() { return _currentHealth; } 
-    public void SetCurrentHealth(int value) { _currentHealth = value; }
-    //----------------------------------------
 
 
     private void Start()

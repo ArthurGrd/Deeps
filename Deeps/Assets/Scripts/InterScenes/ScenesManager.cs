@@ -7,13 +7,11 @@ public class ScenesManager : MonoBehaviour
     
     private PlayerProgress _playerProgress;
     private PlayerGameplay _playerGameplay;
-    private PermObjects _permObjects;
     
     private void Start()
     {
         _playerProgress = GameObject.Find("Player").GetComponent(typeof(PlayerProgress)) as PlayerProgress;
         _playerGameplay = GameObject.Find("Player").GetComponent(typeof(PlayerGameplay)) as PlayerGameplay;
-        _permObjects = GameObject.Find("GameManager").GetComponent(typeof(PermObjects)) as PermObjects;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,7 +19,7 @@ public class ScenesManager : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             SceneManager.LoadScene(sceneToLoad.ToString());
-            _playerGameplay.setActualScene(sceneToLoad);
+            PlayerGameplay._actualScene = sceneToLoad;
             switch (sceneToLoad.ToString())
             {
                 case "Spawn":
@@ -40,7 +38,7 @@ public class ScenesManager : MonoBehaviour
                     _playerProgress.SetCurrentProgressZone(PlayerProgress.ProgressZones.Parkour4);
                     break;
             }
-            _permObjects.SetNeedToUpdate(true);
+            PermObjects._needToUpdate = true;
         }
     }
 }

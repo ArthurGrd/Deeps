@@ -61,6 +61,9 @@
      <Compile Include="Assets\Scripts\Boss\BossKing.cs" />
      <Compile Include="Assets\Scripts\UI\BossBar.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerProgress.cs" />
+     <Compile Include="Assets\Scripts\Elements\Weapons\Rapier.cs" />
+     <Compile Include="Assets\Scripts\Elements\Weapons\Axe.cs" />
+     <Compile Include="Assets\Scripts\Elements\Weapons\Sword.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <Folder Include="Assets\Scripts\InterScenes" />
@@ -69,6 +72,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <Folder Include="Assets\TextMesh Pro\Sprites" />
      <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
+     <Folder Include="Assets\Scripts\Elements\Weapons" />
      <Folder Include="Assets\Imports" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <Folder Include="Assets\Tiles Palettes" />
