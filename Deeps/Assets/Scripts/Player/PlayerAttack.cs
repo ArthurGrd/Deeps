@@ -12,7 +12,7 @@ public interface IWeapons
 public class PlayerAttack : MonoBehaviour
 {
     private Animator _animator;
-    public static IWeapons _actualweapon { get; set; } = null;
+    public static IWeapons _actualweapon =  null;
 
     private int _attackDelay = 0;
 

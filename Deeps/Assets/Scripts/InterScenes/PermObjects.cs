@@ -5,6 +5,7 @@ public class PermObjects : MonoBehaviour
     public GameObject[] objectsToKeep;
 
     private PlayerProgress _playerProgress;
+    private PlayerGameplay _playerGameplay;
     private CameraFollow _cameraFollow;
     private BossManager _bossManager;
     private GameObject _sliderProgress;
@@ -15,6 +16,7 @@ public class PermObjects : MonoBehaviour
     private void Start()
     {
         _playerProgress = GameObject.Find("Player").GetComponent(typeof(PlayerProgress)) as PlayerProgress;
+        _playerGameplay = GameObject.Find("Player").GetComponent(typeof(PlayerGameplay)) as PlayerGameplay;
         _cameraFollow = GameObject.FindWithTag("MainCamera").GetComponent(typeof(CameraFollow)) as CameraFollow;
         _bossManager = GetComponent(typeof(BossManager)) as BossManager;
         _sliderProgress = GameObject.Find("SliderProgress");
@@ -35,9 +37,9 @@ public class PermObjects : MonoBehaviour
     {
         if (_needToUpdate)
         {
-            if (PlayerGameplay._actualScene.ToString() == _playerProgress.GetCurrentProgressZone().ToString())
+            if (_playerGameplay.getActualScene().ToString() == _playerProgress.GetCurrentProgressZone().ToString())
             {
-                if (PlayerGameplay._actualScene == PlayerGameplay.Scenes.Spawn)
+                if (_playerGameplay.getActualScene() == PlayerGameplay.Scenes.Spawn)
                 {
                     _cameraFollow.CamPlacement(false);
                 }

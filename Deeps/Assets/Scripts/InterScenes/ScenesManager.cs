@@ -19,7 +19,7 @@ public class ScenesManager : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             SceneManager.LoadScene(sceneToLoad.ToString());
-            PlayerGameplay._actualScene = sceneToLoad;
+            _playerGameplay.setActualScene(sceneToLoad);
             switch (sceneToLoad.ToString())
             {
                 case "Spawn":
@@ -38,6 +38,7 @@ public class ScenesManager : MonoBehaviour
                     _playerProgress.SetCurrentProgressZone(PlayerProgress.ProgressZones.Parkour4);
                     break;
             }
+            
             PermObjects._needToUpdate = true;
         }
     }

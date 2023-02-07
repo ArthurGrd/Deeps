@@ -18999,11 +18999,12 @@ GameObject:
   - component: {fileID: 1048917086}
   - component: {fileID: 1048917093}
   - component: {fileID: 1048917092}
-  - component: {fileID: 1048917090}
   - component: {fileID: 1048917094}
   - component: {fileID: 1048917096}
   - component: {fileID: 1048917095}
   - component: {fileID: 1048917097}
+  - component: {fileID: 1048917099}
+  - component: {fileID: 1048917098}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -19100,33 +19101,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1048917090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048917084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2148ad83a5752148bf275e206bb8e2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 1048917086}
-  sr: {fileID: 1048917088}
-  checkGroud: {fileID: 1598085955}
-  radius: 0.23
-  _movementAcceleration: 75
-  _maxMoveSpeed: 8
-  _linearDrag: 5
-  _jumpForce: 16.16
-  _airLinearDrag: 2.5
-  _fallmult: 3
-  _lowJumpFallMultiplier: 5
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 1
-  _groundRaycastLength: 0.68
 --- !u!95 &1048917092
 Animator:
   serializedVersion: 5
@@ -19213,6 +19187,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f86a40e5e9647964bbe2e2c4d2f66873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1048917098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048917084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 166b1fd6b65778549932e9177400bce3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walking: 0
+  lookingRight: 0
+  jumping: 0
+  recoilingX: 0
+  recoilingY: 0
+--- !u!114 &1048917099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048917084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226dd23b799435742abb8a9b33c8235c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pState: {fileID: 1048917098}
+  walkSpeed: 9
+  jumpSpeed: 9
+  fallSpeed: 45
+  jumpSteps: 1
+  jumpThreshold: 7
+  recoilXSteps: 4
+  recoilYSteps: 10
+  recoilXSpeed: 45
+  recoilYSpeed: 45
+  groundTransform: {fileID: 1598085955}
+  groundCheckY: 0.2
+  groundCheckX: 0.03
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  rb: {fileID: 1048917086}
+  anim: {fileID: 1048917092}
 --- !u!1 &1058047842
 GameObject:
   m_ObjectHideFlags: 0
