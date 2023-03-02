@@ -25,9 +25,9 @@ public class PlayerMovement : MonoBehaviour
     [Space(5)]
  
     [Header("Ground Checking")]
-    [SerializeField] Transform groundTransform; //This is supposed to be a transform childed to the player just under their collider.
-    [SerializeField] float groundCheckY = 0.2f; //How far on the Y axis the groundcheck Raycast goes.
-    [SerializeField] float groundCheckX = 1;//Same as above but for X.
+    [SerializeField] Transform groundTransform; 
+    [SerializeField] float groundCheckY = 0.2f; 
+    [SerializeField] float groundCheckX = 1;
     [SerializeField] LayerMask groundLayer;
     [Space(5)]
 
@@ -43,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     [SerializeField] Animator anim;
  
-    // Use this for initialization
     void Start () {
         if(pState == null)
         {
@@ -55,7 +54,6 @@ public class PlayerMovement : MonoBehaviour
         grabity = rb.gravityScale;
     }
     
-    // Update is called once per frame
     public void Update () {
         GetInputs();
         Flip();
@@ -117,10 +115,6 @@ public class PlayerMovement : MonoBehaviour
  
     void Walk(float MoveDirection)
     {
-        //Rigidbody2D rigidbody2D = rb;
-        //float x = MoveDirection * walkSpeed;
-        //Vector2 velocity = rb.velocity;
-        //rigidbody2D.velocity = new Vector2(x, velocity.y);
         if (!pState.recoilingX)
         {
             rb.velocity = new Vector2(MoveDirection * walkSpeed, rb.velocity.y);
@@ -142,7 +136,6 @@ public class PlayerMovement : MonoBehaviour
                 pState.lookingRight = false;
             }
  
-            //anim.SetBool("Walking", pState.walking);
         }
  
     }
@@ -150,7 +143,6 @@ public class PlayerMovement : MonoBehaviour
     
     void Recoil()
     {
-        //since this is run after Walk, it takes priority, and effects momentum properly.
         if (pState.recoilingX)
         {
             if (pState.lookingRight)
@@ -167,12 +159,12 @@ public class PlayerMovement : MonoBehaviour
             if (yAxis < 0)
             {
                 rb.velocity = new Vector2(rb.velocity.x, recoilYSpeed);
-                rb.gravityScale = 4;
+                rb.gravityScale = 3;
             }
             else
             {
                 rb.velocity = new Vector2(rb.velocity.x, -recoilYSpeed);
-                rb.gravityScale = 4;
+                rb.gravityScale = 3;
             }
  
         }
@@ -196,7 +188,6 @@ public class PlayerMovement : MonoBehaviour
  
     void StopJumpQuick()
     {
-        //Stops The player jump immediately, causing them to start falling as soon as the button is released.
         stepsJumped = 0;
         pState.jumping = false;
         rb.velocity = new Vector2(rb.velocity.x, 0);
@@ -204,7 +195,6 @@ public class PlayerMovement : MonoBehaviour
  
     void StopJumpSlow()
     {
-        //stops the jump but lets the player hang in the air for awhile.
         stepsJumped = 0;
         pState.jumping = false;
     }
@@ -223,7 +213,6 @@ public class PlayerMovement : MonoBehaviour
  
     public bool Grounded()
     {
-        //this does three small raycasts at the specified positions to see if the player is grounded.
         if (Physics2D.Raycast(groundTransform.position, Vector2.down, groundCheckY, groundLayer) || Physics2D.Raycast(groundTransform.position + new Vector3(-groundCheckX, 0), Vector2.down, groundCheckY, groundLayer) || Physics2D.Raycast(groundTransform.position + new Vector3(groundCheckX, 0), Vector2.down, groundCheckY, groundLayer))
         {
             return true;
@@ -236,11 +225,9 @@ public class PlayerMovement : MonoBehaviour
 
     void GetInputs()
     {
-        //WASD/Joystick
         yAxis = Input.GetAxis("Vertical");
         xAxis = Input.GetAxis("Horizontal");
  
-        //This is essentially just sensitivity.
         if (yAxis > 0.25)
         {
             yAxis = 1;
@@ -267,10 +254,7 @@ public class PlayerMovement : MonoBehaviour
             xAxis = 0;
         }
  
-        //anim.SetBool("Grounded", Grounded());
-        //anim.SetFloat("YVelocity", rb.velocity.y);
  
-        //Jumping
         if (Input.GetButtonDown("Jump") && Grounded())
         {
             pState.jumping = true;
@@ -289,7 +273,6 @@ public class PlayerMovement : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        //Gizmos.DrawWireCube(groundTransform.position, new Vector2(groundCheckX, groundCheckY));
  
         Gizmos.DrawLine(groundTransform.position, groundTransform.position + new Vector3(0, -groundCheckY));
         Gizmos.DrawLine(groundTransform.position + new Vector3(-groundCheckX, 0), groundTransform.position + new Vector3(-groundCheckX, -groundCheckY));

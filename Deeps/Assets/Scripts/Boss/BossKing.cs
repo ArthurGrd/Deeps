@@ -26,14 +26,6 @@ public class BossKing : MonoBehaviour, IBoss
         return _health;
     }
     
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            _playerHealth.TakeDamage(_attackDamage);
-            TakeDamage(PlayerAttack._actualweapon.GetDamage());
-        }
-    }
 
     public void TakeDamage(int damage)
     {

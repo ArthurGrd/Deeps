@@ -56,7 +56,7 @@ public class PlayerGameplay : MonoBehaviour
             {
                 _playerHealth.TakeDamage(1);
             }
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 _playerAttack.Attack();
             }

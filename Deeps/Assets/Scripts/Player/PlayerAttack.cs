@@ -13,6 +13,8 @@ public class PlayerAttack : MonoBehaviour
 {
     private Animator _animator;
     public static IWeapons _actualweapon =  null;
+    public Transform Attackr;
+    public LayerMask ennemilayer;
 
     private int _attackDelay = 0;
 
@@ -28,6 +30,13 @@ public class PlayerAttack : MonoBehaviour
             _animator.SetTrigger("Attack");
 
             _attackDelay = 120 / _actualweapon.GetAttackSpeed();
+            
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(Attackr.position,1f,ennemilayer);
+            
+            foreach (var VARIABLE in hitEnemies)
+            {
+                VARIABLE.GetComponent<BossGoblin>().TakeDamage(_actualweapon.GetDamage());
+            }
         }
     }
 

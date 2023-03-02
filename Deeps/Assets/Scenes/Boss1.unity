@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 115110360}
   - component: {fileID: 115110362}
   - component: {fileID: 115110363}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Goblin
   m_TagString: Boss
   m_Icon: {fileID: 0}
