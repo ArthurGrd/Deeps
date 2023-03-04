@@ -5,6 +5,8 @@ public class Rapier : MonoBehaviour, IWeapons
     private string _name = "Rapier";
     private int _damage = 1;
     private int _attackSpeed = 4;
+    public SpriteRenderer SR;
+    public ParticleSystem PS;
     public string GetName()
     {
         return _name;
@@ -22,6 +24,8 @@ public class Rapier : MonoBehaviour, IWeapons
         if (collision.CompareTag("Player") && PlayerAttack._actualweapon == null)
         {
             PlayerAttack._actualweapon = this;
+            SR.enabled = false;
+            PS.Stop();
         }
     }
 }

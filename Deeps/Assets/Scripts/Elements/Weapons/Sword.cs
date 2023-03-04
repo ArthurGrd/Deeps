@@ -6,6 +6,8 @@ public class Sword : MonoBehaviour, IWeapons
     private string _name = "Sword";
     private int _damage = 2;
     private int _attackSpeed = 2;
+    public SpriteRenderer SR;
+    public ParticleSystem PS;
     public string GetName()
     {
         return _name;
@@ -24,6 +26,8 @@ public class Sword : MonoBehaviour, IWeapons
         if (collision.CompareTag("Player") && PlayerAttack._actualweapon == null)
         {
             PlayerAttack._actualweapon = this;
+            SR.enabled = false;
+            PS.Stop();
         }
     }
 }

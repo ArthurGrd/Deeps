@@ -26,6 +26,14 @@ public class BossGoblin : MonoBehaviour, IBoss
         return _health;
     }
     
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            _playerHealth.TakeDamage(_attackDamage);
+        }
+    }
+    
 
     public void TakeDamage(int damage)
     {

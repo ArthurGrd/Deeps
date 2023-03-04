@@ -159,18 +159,18 @@ public class PlayerMovement : MonoBehaviour
             if (yAxis < 0)
             {
                 rb.velocity = new Vector2(rb.velocity.x, recoilYSpeed);
-                rb.gravityScale = 3;
+                rb.gravityScale = 4;
             }
             else
             {
                 rb.velocity = new Vector2(rb.velocity.x, -recoilYSpeed);
-                rb.gravityScale = 3;
+                rb.gravityScale = 4;
             }
  
         }
         else
         {
-            rb.gravityScale = 3;
+            rb.gravityScale = 4;
         }
     }
  
@@ -178,11 +178,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (xAxis > 0)
         {
-            transform.localScale = new Vector2(2, transform.localScale.y);
+            transform.localScale = new Vector2(3, transform.localScale.y);
         }
         else if (xAxis < 0)
         {
-            transform.localScale = new Vector2(-2, transform.localScale.y);
+            transform.localScale = new Vector2(-3, transform.localScale.y);
         }
     }
  
