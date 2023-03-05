@@ -1,10 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
 
     public PlayerStateList pState;
- 
     [Header("X Axis Movement")]
     [SerializeField] float walkSpeed = 25f;
  
@@ -30,6 +30,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float groundCheckX = 1;
     [SerializeField] LayerMask groundLayer;
     [Space(5)]
+    
+    
+    private bool canDash = true;
+    private bool isDashing;
+    private float dashingPower = 64f;
+    private float dashingTime = 0.15f;
+    private float dashingCooldown = 0.7f;
+    
+    [SerializeField] private TrailRenderer tr;
 
 
     float timeSinceAttack;
@@ -65,6 +74,10 @@ public class PlayerMovement : MonoBehaviour
  
     void FixedUpdate()
     {
+        if (isDashing)
+        {
+            return;
+        }
         if (pState.recoilingX == true && stepsXRecoiled < recoilXSteps)
         {
             stepsXRecoiled++;
@@ -85,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
         {
             StopRecoilY();
         }
- 
+
         Jump();
     }
  
@@ -104,9 +117,7 @@ public class PlayerMovement : MonoBehaviour
                 StopJumpSlow();
             }
         }
- 
-        //This limits how fast the player can fall
-        //Since platformers generally have increased gravity, you don't want them to fall so fast they clip trough all the floors.
+        
         if (rb.velocity.y < -Mathf.Abs(fallSpeed))
         {        
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -Mathf.Abs(fallSpeed), Mathf.Infinity));
@@ -178,7 +189,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (xAxis > 0)
         {
-            transform.localScale = new Vector2(3, transform.localScale.y);
+            transform.localScale = new Vector2(3, transform.localScale.y); 
         }
         else if (xAxis < 0)
         {
@@ -228,11 +239,17 @@ public class PlayerMovement : MonoBehaviour
         yAxis = Input.GetAxis("Vertical");
         xAxis = Input.GetAxis("Horizontal");
  
-        if (yAxis > 0.25)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && canDash)
+        {
+            anim.SetTrigger("Dasjh");
+            StartCoroutine(Dash());
+        }
+        
+        if (yAxis > 0.10)
         {
             yAxis = 1;
         }
-        else if (yAxis < -0.25)
+        else if (yAxis < -0.10)
         {
             yAxis = -1;
         }
@@ -241,11 +258,11 @@ public class PlayerMovement : MonoBehaviour
             yAxis = 0;
         }
  
-        if (xAxis > 0.25)
+        if (xAxis > 0.10)
         {
             xAxis = 1;
         }
-        else if (xAxis < -0.25)
+        else if (xAxis < -0.10)
         {
             xAxis = -1;
         }
@@ -259,7 +276,7 @@ public class PlayerMovement : MonoBehaviour
         {
             pState.jumping = true;
         }
- 
+
         if (!Input.GetButton("Jump") && stepsJumped < jumpSteps && stepsJumped > jumpThreshold && pState.jumping)
         {
             StopJumpQuick();
@@ -277,5 +294,22 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawLine(groundTransform.position, groundTransform.position + new Vector3(0, -groundCheckY));
         Gizmos.DrawLine(groundTransform.position + new Vector3(-groundCheckX, 0), groundTransform.position + new Vector3(-groundCheckX, -groundCheckY));
         Gizmos.DrawLine(groundTransform.position + new Vector3(groundCheckX, 0), groundTransform.position + new Vector3(groundCheckX, -groundCheckY));
+    }
+    
+    
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        walkSpeed = 35;
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        walkSpeed = 11;
+        tr.emitting = false;
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
     }
 }
