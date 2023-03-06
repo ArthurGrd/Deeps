@@ -29,6 +29,8 @@ public class PlayerGameplay : MonoBehaviour
     public Scenes getActualScene() { return _actualScene; }
     public void setActualSpawn(GameObject spawn) { _actualSpawn = spawn; }
     public GameObject getActualSpawn() { return _actualSpawn; }
+
+    public AudioSource Attack;
     //----------------------------------------
 
     
@@ -56,9 +58,10 @@ public class PlayerGameplay : MonoBehaviour
             {
                 _playerHealth.TakeDamage(1);
             }
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) && _playerAttack.GetWeapon() != null)
             {
                 _playerAttack.Attack();
+                Attack.Play();
             }
             _playerMove.Update();   
         }

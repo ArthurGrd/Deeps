@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public PlayerStateList pState;
     [Header("X Axis Movement")]
     [SerializeField] float walkSpeed = 25f;
+
+    public SpriteRenderer SR;
  
     [Space(5)]
  
@@ -37,7 +39,10 @@ public class PlayerMovement : MonoBehaviour
     private float dashingPower = 64f;
     private float dashingTime = 0.15f;
     private float dashingCooldown = 0.7f;
-    
+
+    public AudioSource dash;
+    public AudioSource running;
+
     [SerializeField] private TrailRenderer tr;
 
 
@@ -69,6 +74,15 @@ public class PlayerMovement : MonoBehaviour
         Walk(xAxis);
         float CharacterVelo = Mathf.Abs(rb.velocity.x);
         anim.SetFloat("Speed",CharacterVelo);
+        if (!Grounded())
+        {
+            anim.SetFloat("Speed",0);
+        }
+        anim.SetBool("isfalling",!Grounded());
+        if (!(CharacterVelo > 5 && Grounded()))
+        {
+            running.Play();
+        }
         Recoil();
     }
  
@@ -129,7 +143,6 @@ public class PlayerMovement : MonoBehaviour
         if (!pState.recoilingX)
         {
             rb.velocity = new Vector2(MoveDirection * walkSpeed, rb.velocity.y);
- 
             if (Mathf.Abs(rb.velocity.x) > 0)
             {
                 pState.walking = true;
@@ -238,8 +251,9 @@ public class PlayerMovement : MonoBehaviour
     {
         yAxis = Input.GetAxis("Vertical");
         xAxis = Input.GetAxis("Horizontal");
- 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && canDash)
+        float CharacterVelo = Mathf.Abs(rb.velocity.x);
+        
+        if (Input.GetKeyDown(KeyCode.Mouse1) && canDash && CharacterVelo > 10)
         {
             anim.SetTrigger("Dasjh");
             StartCoroutine(Dash());
@@ -302,6 +316,7 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
         float originalGravity = rb.gravityScale;
+        dash.Play();
         walkSpeed = 35;
         tr.emitting = true;
         yield return new WaitForSeconds(dashingTime);
@@ -309,7 +324,9 @@ public class PlayerMovement : MonoBehaviour
         tr.emitting = false;
         rb.gravityScale = originalGravity;
         isDashing = false;
+        SR.color = Color.red;
         yield return new WaitForSeconds(dashingCooldown);
+        SR.color = Color.white;
         canDash = true;
     }
 }

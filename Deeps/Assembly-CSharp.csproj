@@ -105,6 +105,7 @@
      <Folder Include="Assets\Imports\BackGround" />
      <Folder Include="Assets\Imports\HealthHeartSystem" />
      <Folder Include="Assets\Imports\BlueWizard Animations\BlueWizard\2BlueWizardJump" />
+     <Folder Include="Assets\Imports\Music\dark earth" />
      <Folder Include="Assets\Imports\BlueWizard Animations\BlueWizard\2BlueWizardJump\DashEffect" />
      <Folder Include="Assets\Imports\Plant Animations\Plant Wind 1" />
      <Folder Include="Assets\Imports\HealthHeartSystem\Scripts" />
@@ -119,6 +120,7 @@
      <Folder Include="Assets\Imports\HealthHeartSystem\Prefabs" />
      <None Include="Assets\Imports\Free Pixel Effects Pack\README.txt" />
      <Folder Include="Assets\Imports\BlueWizard Animations\BlueWizard\2BlueWizardIdle\Materials" />
+     <Folder Include="Assets\Imports\Music\CasualGameSounds" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <Folder Include="Assets\Imports\Plant Animations\Plant 4" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
@@ -146,6 +148,7 @@
      <Folder Include="Assets\Imports\Plant Animations\Plant 2" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <Folder Include="Assets\Imports\Plant Animations\Plant 7" />
+     <Folder Include="Assets\Imports\Music" />
      <Folder Include="Assets\Imports\Cainos\Pixel Art Platformer - Village Props\Prefab" />
      <Folder Include="Assets\Imports\Plant Animations\PlantJump2" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />

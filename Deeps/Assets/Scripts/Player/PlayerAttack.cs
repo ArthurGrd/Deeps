@@ -23,6 +23,11 @@ public class PlayerAttack : MonoBehaviour
         _animator = GetComponent(typeof(Animator)) as Animator;
     }
 
+    public IWeapons GetWeapon()
+    {
+        return _actualweapon;
+    }
+
     public void Attack()
     {
         if (_attackDelay==0 && _actualweapon!=null)
