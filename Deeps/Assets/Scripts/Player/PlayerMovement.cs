@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     private float dashingPower = 64f;
     private float dashingTime = 0.15f;
     private float dashingCooldown = 0.7f;
+    private float lastdash;
 
     public AudioSource dash;
     public AudioSource running;
@@ -54,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
     int stepsXRecoiled;
     int stepsYRecoiled;
     int stepsJumped = 0;
+    public Slider cooldown;
  
     public Rigidbody2D rb;
     [SerializeField] Animator anim;
@@ -326,9 +329,17 @@ public class PlayerMovement : MonoBehaviour
         tr.emitting = false;
         rb.gravityScale = originalGravity;
         isDashing = false;
-        SR.color = Color.red;
+        CooldownSlider();
         yield return new WaitForSeconds(dashingCooldown);
-        SR.color = Color.white;
         canDash = true;
     }
+
+    private void CooldownSlider()
+    {
+        for (float i = 0; i <= dashingCooldown; i+= Time.deltaTime)
+        {
+            cooldown.value = i / dashingCooldown;
+        }
+    }
+    
 }

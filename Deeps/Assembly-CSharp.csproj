@@ -69,6 +69,7 @@
      <Compile Include="Assets\Imports\HealthHeartSystem\Scripts\HealthBarHUDTester.cs" />
      <Compile Include="Assets\Scripts\Elements\Weapons\Sword.cs" />
      <Compile Include="Assets\Imports\BackGround\BackGround.cs" />
+     <Compile Include="Assets\Couldown.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Imports\Plant Animations\Plant 8 Poison" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public interface IWeapons
 {
@@ -16,8 +17,9 @@ public class PlayerAttack : MonoBehaviour
     public static IWeapons _actualweapon =  null;
     public Transform Attackr;
     public LayerMask ennemilayer;
+    public Slider Cooldown;
 
-    private int _attackDelay = 0;
+    private float _attackDelay = 0f;
 
     private void Start()
     {
@@ -31,11 +33,13 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()
     {
-        if (_attackDelay==0 && _actualweapon!=null)
+        if (_attackDelay<=0 && _actualweapon!=null)
         {
             _animator.SetTrigger("Attack");
 
             _attackDelay = 120 / _actualweapon.GetAttackSpeed();
+
+            _attackDelay /= 10;
             
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(Attackr.position,1f,ennemilayer);
             
@@ -49,9 +53,10 @@ public class PlayerAttack : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_attackDelay!=0)
+        if (_attackDelay>0)
         {
-            _attackDelay -= 1;
+            _attackDelay -= 0.1f;
+            Cooldown.value = _attackDelay;
         }
     }
 }
