@@ -5,7 +5,7 @@ public class Sword : MonoBehaviour, IWeapons
 {
     private string _name = "Sword";
     private int _damage = 2;
-    private int _attackSpeed = 2;
+    private int _attackSpeed = 8;
     public SpriteRenderer SR;
     public ParticleSystem PS;
     public string GetName()

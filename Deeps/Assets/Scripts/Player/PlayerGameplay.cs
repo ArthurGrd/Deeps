@@ -61,7 +61,6 @@ public class PlayerGameplay : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse0) && _playerAttack.GetWeapon() != null)
             {
                 _playerAttack.Attack();
-                Attack.Play();
             }
             _playerMove.Update();   
         }

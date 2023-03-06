@@ -4,7 +4,7 @@ public class Rapier : MonoBehaviour, IWeapons
 {
     private string _name = "Rapier";
     private int _damage = 1;
-    private int _attackSpeed = 4;
+    private int _attackSpeed = 10;
     public SpriteRenderer SR;
     public ParticleSystem PS;
     public string GetName()

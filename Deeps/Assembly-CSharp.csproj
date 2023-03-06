@@ -140,6 +140,7 @@
      <Folder Include="Assets\TextMesh Pro\Fonts" />
      <Folder Include="Assets\Imports\Cainos\Pixel Art Platformer - Village Props\Material" />
      <Folder Include="Assets\Imports\BlueWizard Animations\BlueWizard\2BlueWizardIdle\attack" />
+     <Folder Include="Assets\Imports\Music\sound" />
      <Folder Include="Assets\Imports\Plant Animations\Plant 5" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <Folder Include="Assets\Imports\Free Pixel Effects Pack" />

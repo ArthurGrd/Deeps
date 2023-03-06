@@ -4,7 +4,7 @@ public class Axe : MonoBehaviour, IWeapons
 {
     private string _name = "Axe";
     private int _damage = 4;
-    private int _attackSpeed = 1;
+    private int _attackSpeed = 5;
     public SpriteRenderer SR;
     public ParticleSystem PS;
     public string GetName()

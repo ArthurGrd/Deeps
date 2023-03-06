@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
     public AudioSource dash;
     public AudioSource running;
+    public AudioSource jump;
 
     [SerializeField] private TrailRenderer tr;
 
@@ -130,6 +131,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 StopJumpSlow();
             }
+            jump.Play();
         }
         
         if (rb.velocity.y < -Mathf.Abs(fallSpeed))

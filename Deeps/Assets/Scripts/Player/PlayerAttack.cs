@@ -11,6 +11,7 @@ public interface IWeapons
 
 public class PlayerAttack : MonoBehaviour
 {
+    public AudioSource attack;
     private Animator _animator;
     public static IWeapons _actualweapon =  null;
     public Transform Attackr;
@@ -42,10 +43,11 @@ public class PlayerAttack : MonoBehaviour
             {
                 VARIABLE.GetComponent<BossGoblin>().TakeDamage(_actualweapon.GetDamage());
             }
+            attack.Play();
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (_attackDelay!=0)
         {
