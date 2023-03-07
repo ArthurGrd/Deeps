@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     private float dashingTime = 0.15f;
     private float dashingCooldown = 0.7f;
     private float lastdash;
+    private float dashingcurrenttime = 0.0f;
 
     public AudioSource dash;
     public AudioSource running;
@@ -92,6 +93,13 @@ public class PlayerMovement : MonoBehaviour
  
     void FixedUpdate()
     {
+        if (dashingcurrenttime < dashingCooldown)
+        {
+            dashingcurrenttime += Time.deltaTime;
+            dashingcurrenttime = Mathf.Clamp(dashingcurrenttime, 0.0f, dashingCooldown);
+        }
+
+        cooldown.value = dashingcurrenttime / dashingCooldown;
         if (isDashing)
         {
             return;
@@ -262,6 +270,7 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetTrigger("Dasjh");
             StartCoroutine(Dash());
+            dashingcurrenttime = 0.0f;
         }
         
         if (yAxis > 0.10)
@@ -329,17 +338,9 @@ public class PlayerMovement : MonoBehaviour
         tr.emitting = false;
         rb.gravityScale = originalGravity;
         isDashing = false;
-        CooldownSlider();
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
-
-    private void CooldownSlider()
-    {
-        for (float i = 0; i <= dashingCooldown; i+= Time.deltaTime)
-        {
-            cooldown.value = i / dashingCooldown;
-        }
-    }
     
+
 }
